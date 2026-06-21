@@ -261,52 +261,52 @@
     }
 
     // ---------- ADMIN: Add / Update Course ----------
-    courseForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+   // ---------- ADMIN: Add / Update Course ----------
+courseForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        const title = titleInput.value.trim();
-        const price = parseFloat(priceInput.value);
-        const image = imageInput.value.trim();
-        const description = descInput.value.trim();
+    const title = titleInput.value.trim();
+    const price = parseFloat(priceInput.value);
+    const image = imageInput.value.trim();
+    const description = descInput.value.trim();
 
-        if (!title || isNaN(price) || price <= 0) {
-            alert('Please enter a valid title and price.');
-            return;
-        }
+    if (!title || isNaN(price) || price <= 0) {
+        alert('Please enter a valid title and price.');
+        return;
+    }
 
-        if (editingCourseId) {
-            // Update existing course
-            const index = courses.findIndex(c => c.id === editingCourseId);
-            if (index !== -1) {
-                courses[index] = {
-                    ...courses[index],
-                    title: title,
-                    price: price,
-                    image: image || courses[index].image,
-                    description: description || courses[index].description
-                };
-            }
-            editingCourseId = null;
-            submitBtn.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Add course';
-            submitBtn.classList.remove('btn-update');
-        } else {
-            // Add new course
-            courses.push({
-                id: nextCourseId++,
+    if (editingCourseId) {
+        // Update existing course
+        const index = courses.findIndex(c => c.id === editingCourseId);
+        if (index !== -1) {
+            courses[index] = {
+                ...courses[index],
                 title: title,
                 price: price,
-                image: image || 'https://placehold.co/400x240/2a6df4/ffffff?text=Course',
-                description: description || 'Learn industry-ready skills.'
-            });
+                image: image || courses[index].image,
+                description: description || courses[index].description
+            };
         }
+        editingCourseId = null;
+        submitBtn.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Add course';
+        submitBtn.classList.remove('btn-update');
+    } else {
+        // Add new course
+        courses.push({
+            id: nextCourseId++,
+            title: title,
+            price: price,
+            image: image || 'https://placehold.co/400x240/2a6df4/ffffff?text=Course',
+            description: description || 'Learn industry-ready skills.'
+        });
+    }
 
-        renderCourses();
-        renderOrders();
-        refreshPublicView();
-        courseForm.reset();
-        imageInput.value = '';
-    });
-
+    renderCourses();
+    renderOrders();
+    refreshPublicView();  // ← THIS IS THE IMPORTANT LINE
+    courseForm.reset();
+    imageInput.value = '';
+});
     // ---------- AUTH: Login ----------
     loginForm.addEventListener('submit', function (e) {
         e.preventDefault();
