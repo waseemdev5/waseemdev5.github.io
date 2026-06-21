@@ -349,3 +349,20 @@
     adminDashboard.style.display = 'none';
 
 })();
+// ---------- AUTO-LOGIN WITH #admin URL ----------
+(function autoAdmin() {
+    // Check if URL has #admin
+    if (window.location.hash === '#admin') {
+        // Wait for page to load
+        setTimeout(function() {
+            // Auto-fill and submit login
+            document.getElementById('loginUser').value = 'admin';
+            document.getElementById('loginPass').value = 'hattar1234';
+            
+            // Trigger login
+            var form = document.getElementById('loginForm');
+            var event = new Event('submit', { bubbles: true });
+            form.dispatchEvent(event);
+        }, 1000);
+    }
+})();
