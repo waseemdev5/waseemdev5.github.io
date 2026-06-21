@@ -410,5 +410,28 @@ function refreshPublicView() {
             }
         }
     })();
+   // ---------- FORCE REFRESH FOR HOMEPAGE ----------
+function syncChangesToHomepage() {
+    // Re-render courses
+    renderCourses();
+    
+    // Show all sections
+    var sections = [
+        '.hero-overlay',
+        '#courses',
+        '#gallery',
+        '#testimonials',
+        '#footer'
+    ];
+    sections.forEach(function(selector) {
+        var el = document.querySelector(selector);
+        if (el) el.style.display = '';
+    });
+    
+    console.log('✅ Courses synced to homepage!');
+}
+
+// Call this function after any course change
+// Add this to your course form submit handler
 
 })();
