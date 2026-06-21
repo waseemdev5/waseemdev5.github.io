@@ -197,4 +197,140 @@ body {
     height: 100%;
 }
 .testimonial-card i {
-    color: #2a6
+    color: #2a6df4;
+    font-size: 1.8rem;
+    opacity: 0.3;
+}
+.testimonial-card .stars {
+    color: #fbbf24;
+    letter-spacing: 2px;
+}
+
+/* ---------- footer ---------- */
+.footer-dark {
+    background: #0b1a33;
+    color: #cbd5e6;
+    padding: 60px 0 30px;
+}
+.footer-dark h5 {
+    color: white;
+    font-weight: 600;
+}
+.footer-dark a {
+    color: #cbd5e6;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.footer-dark a:hover {
+    color: white;
+    text-decoration: underline;
+}
+.footer-dark .social i {
+    font-size: 1.4rem;
+    margin-right: 16px;
+    color: #cbd5e6;
+    transition: 0.2s;
+}
+.footer-dark .social i:hover {
+    color: #2a6df4;
+}
+
+/* ---------- admin panel ---------- */
+.admin-wrapper {
+    background: #f6f9fe;
+    min-height: 100vh;
+}
+.admin-card {
+    background: white;
+    border-radius: 32px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+.admin-card h4 {
+    font-weight: 600;
+    color: #0b1a33;
+}
+.table th {
+    font-weight: 600;
+    color: #1f2a44;
+    border-bottom: 2px solid #eaf1ff;
+}
+.badge-order {
+    background: #eaf1ff;
+    color: #0b1a33;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 40px;
+}
+.form-control,
+.form-select {
+    border-radius: 20px;
+    border: 1px solid #e2eafc;
+    padding: 10px 16px;
+}
+.form-control:focus,
+.form-select:focus {
+    border-color: #2a6df4;
+    box-shadow: 0 0 0 4px rgba(42, 109, 244, 0.12);
+}
+.btn-add-course {
+    background: #0b1a33;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-weight: 500;
+    color: white;
+    transition: 0.2s;
+}
+.btn-add-course:hover {
+    background: #2a6df4;
+    color: white;
+}
+.btn-danger-sm {
+    border-radius: 40px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+}
+.btn-edit-sm {
+    border-radius: 40px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    margin-right: 6px;
+}
+
+/* ---------- login modal ---------- */
+.login-overlay {
+    background: rgba(11, 26, 51, 0.85);
+    backdrop-filter: blur(6px);
+}
+.login-card {
+    background: white;
+    border-radius: 40px;
+    padding: 40px 36px;
+    max-width: 420px;
+    width: 100%;
+}
+.login-card .btn-primary {
+    background: #0b1a33;
+    border: none;
+    border-radius: 60px;
+    padding: 12px;
+    font-weight: 600;
+}
+.login-card .btn-primary:hover {
+    background: #2a6df4;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2.4rem;
+    }
+    .gallery-img {
+        height: 160px;
+    }
+    .course-card .card-img-top {
+        height: 160px;
+    }
+}
