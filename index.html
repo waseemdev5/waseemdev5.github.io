@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillForge · Digital Skills Courses</title>
+
+    <!-- Bootstrap 5 + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <!-- ===== SEPARATE CSS ===== -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- ============ NAVBAR ============ -->
+    <!-- ============================================================ -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-lightning-charge-fill"></i>SkillForge</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
+                </ul>
+                <a href="#" class="btn btn-outline-primary" id="adminLoginBtn"><i class="bi bi-shield-lock me-1"></i>Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- ============ HERO SECTION ============ -->
+    <!-- ============================================================ -->
+    <section id="home" class="hero-overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Master <span>digital skills</span> <br />for a future-proof career</h1>
+                    <p class="lead mt-3">Web Dev, AI, Marketing, Video Editing & more — taught by industry experts.</p>
+                    <a href="#courses" class="btn btn-primary mt-2"><i class="bi bi-arrow-right-circle me-2"></i>Explore courses</a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-end">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop" class="img-fluid rounded-4 shadow" alt="hero" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ============ COURSES SECTION ============ -->
+    <!-- ============================================================ -->
+    <section id="courses" class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-bold" style="color: #0b1a33;"><i class="bi bi-grid-3x3-gap-fill me-2" style="color:#2a6df4;"></i>Our courses</h3>
+                <span class="badge bg-light text-dark px-4 py-2 rounded-pill" id="courseCount">0 courses</span>
+            </div>
+            <div class="row g-4" id="courseContainer"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ============ GALLERY: Pakistani School & Lab ============ -->
+    <!-- ============================================================ -->
+    <section id="gallery" class="py-5 bg-white">
+        <div class="container">
+            <h3 class="fw-bold text-center mb-4" style="color: #0b1a33;"><i class="bi bi-images me-2" style="color:#2a6df4;"></i>Our learning environment</h3>
+            <p class="text-muted text-center mb-4">Government Boys High School Hattar · Computer lab · student work & success</p>
+            <div class="row g-4">
+                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=300&fit=crop&crop=center" class="gallery-img" alt="Pakistan School" /></div>
+                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&crop=center" class="gallery-img" alt="Computer Lab Pakistan" /></div>
+                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop&crop=center" class="gallery-img" alt="Students Working" /></div>
+                <div class="col-md-3 col-6"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&crop=center" class="gallery-img" alt="Student Success" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ============ TESTIMONIALS ============ -->
+    <!-- ============================================================ -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h3 class="fw-bold text-center mb-4" style="color: #0b1a33;"><i class="bi bi-chat-quote me-2" style="color:#2a6df4;"></i>Client reviews</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote"></i>
+                        <p class="mt-2 fw-medium">"The Web Dev course gave me real skills. I landed a job within 2 months!"</p>
+                        <div class="stars">★★★★★</div>
+                        <small class="text-muted">— Ahmed R., Web Developer</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote"></i>
+                        <p class="mt-2 fw-medium">"Generative AI course is mind-blowing. I'm building my own AI tools now."</p>
+                        <div class="stars">★★★★★</div>
+                        <small class="text-muted">— Sara K., AI Enthusiast</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote"></i>
+                        <p class="mt-2 fw-medium">"Video editing course helped me start my YouTube channel. Highly recommend!"</p>
+                        <div class="stars">★★★★★</div>
+                        <small class="text-muted">— Zain M., Content Creator</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ============ FOOTER ============ -->
+    <!-- ============================================================ -->
+    <footer id="footer" class="footer-dark">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5><i class="bi bi-lightning-charge-fill me-2" style="color:#2a6df4;"></i>SkillForge</h5>
+                    <p>Empowering students with digital skills. Based in Pakistan — Government Boys High School Hattar collaboration.</p>
+                    <div class="social">
+                        <i class="bi bi-facebook"></i><i class="bi bi-youtube"></i><i class="bi bi-instagram"></i><i class="bi bi-twitter"></i>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick</h5>
+                    <a href="#courses">Courses</a><br />
+                    <a href="#gallery">Gallery</a><br />
+                    <a href="#testimonials">Reviews</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p><i class="bi bi-geo-alt me-2"></i>Hattar, Haripur, Pakistan</p>
+                    <p><i class="bi bi-envelope me-2"></i>info@skillforge.pk</p>
+                    <p><i class="bi bi-phone me-2"></i>+92 300 1234567</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <p>Mon-Fri 9am-5pm</p>
+                    <p><a href="#">help@skillforge.pk</a></p>
+                </div>
+            </div>
+            <hr class="mt-4" style="border-color: rgba(255,255,255,0.08);" />
+            <p class="text-center mb-0 small">© 2026 SkillForge — built for Government Boys High School Hattar</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- ============ LOGIN MODAL ============ -->
+    <!-- ============================================================ -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content login-overlay border-0">
+                <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+                    <div class="login-card">
+                        <h4 class="fw-bold text-center"><i class="bi bi-shield-lock-fill me-2" style="color:#2a6df4;"></i>Admin Login</h4>
+                        <p class="text-muted text-center small">Enter credentials to access dashboard</p>
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Username</label>
+                                <input type="text" class="form-control" id="loginUser" value="admin" required />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Password</label>
+                                <input type="password" class="form-control" id="loginPass" value="admin123" required />
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-box-arrow-in-right me-2"></i>Login</button>
+                            <p class="text-center text-muted small mt-3">default: admin / admin123</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ============ ADMIN DASHBOARD ============ -->
+    <!-- ============================================================ -->
+    <div id="adminDashboard" style="display: none;" class="admin-wrapper py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-bold" style="color: #0b1a33;"><i class="bi bi-speedometer2 me-2" style="color:#2a6df4;"></i>Dashboard</h3>
+                <button class="btn btn-outline-secondary" id="logoutBtn"><i class="bi bi-box-arrow-left me-1"></i>Logout</button>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="admin-card">
+                        <h4><i class="bi bi-plus-circle me-2" style="color:#2a6df4;"></i>Add / Edit Course</h4>
+                        <form id="courseForm">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Title</label>
+                                <input type="text" class="form-control" id="courseTitle" placeholder="e.g. Generative AI" required />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Price ($)</label>
+                                <input type="number" step="0.01" class="form-control" id="coursePrice" placeholder="49.99" required />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Image URL</label>
+                                <input type="text" class="form-control" id="courseImage" placeholder="https://example.com/image.jpg" />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Description</label>
+                                <input type="text" class="form-control" id="courseDesc" placeholder="Brief course description" />
+                            </div>
+                            <button type="submit" class="btn-add-course w-100" id="submitBtn"><i class="bi bi-plus-circle me-2"></i>Add course</button>
+                        </form>
+                        <hr class="my-4" />
+                        <h6 class="fw-semibold"><i class="bi bi-list-ul me-2"></i>Manage & Edit courses</h6>
+                        <div id="manageCourseList"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="admin-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4><i class="bi bi-bag-check me-2" style="color:#2a6df4;"></i>Orders</h4>
+                            <span class="badge bg-secondary bg-opacity-10 text-dark px-3 py-2 rounded-pill" id="orderCount">0</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead><tr><th>Course</th><th>Price</th><th>Customer</th><th>Status</th></tr></thead>
+                                <tbody id="orderTableBody"></tbody>
+                            </table>
+                            <div id="emptyOrders" class="text-muted text-center py-3">No orders yet.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- Bootstrap JS (CDN) -->
+    <!-- ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ===== SEPARATE JS ===== -->
+    <script src="script.js"></script>
+</body>
+</html>

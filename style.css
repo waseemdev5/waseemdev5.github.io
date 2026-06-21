@@ -1,0 +1,336 @@
+/* ================================================================
+   style.css — SkillForge main styles
+   ================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f6f9fe;
+    scroll-behavior: smooth;
+}
+
+/* ---------- navbar ---------- */
+.navbar-custom {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+    color: #0b1a33;
+}
+.navbar-brand i {
+    color: #2a6df4;
+    margin-right: 8px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #1f2a44 !important;
+    padding: 0 18px !important;
+    transition: 0.2s;
+}
+.nav-link:hover {
+    color: #2a6df4 !important;
+}
+
+.btn-outline-primary {
+    border-radius: 40px;
+    padding: 6px 24px;
+    font-weight: 500;
+    border-color: #2a6df4;
+    color: #2a6df4;
+}
+.btn-outline-primary:hover {
+    background: #2a6df4;
+    color: white;
+}
+
+/* ---------- hero overlay ---------- */
+.hero-overlay {
+    background: linear-gradient(135deg, #0b1a33 0%, #1a2f5a 100%);
+    color: white;
+    padding: 80px 0 70px;
+    position: relative;
+    overflow: hidden;
+}
+.hero-overlay::after {
+    content: '';
+    position: absolute;
+    right: -10%;
+    top: -30%;
+    width: 600px;
+    height: 600px;
+    background: rgba(42, 109, 244, 0.08);
+    border-radius: 50%;
+    z-index: 0;
+}
+.hero-overlay .container {
+    position: relative;
+    z-index: 2;
+}
+.hero-overlay h1 {
+    font-weight: 700;
+    font-size: 3.6rem;
+    letter-spacing: -1px;
+}
+.hero-overlay h1 span {
+    color: #7aa5ff;
+}
+.hero-overlay .lead {
+    font-weight: 400;
+    max-width: 540px;
+    opacity: 0.85;
+}
+.hero-overlay .btn-primary {
+    background: #2a6df4;
+    border: none;
+    padding: 14px 44px;
+    border-radius: 60px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.hero-overlay .btn-primary:hover {
+    background: #1a4fc4;
+    transform: translateY(-2px);
+}
+
+/* ---------- course cards ---------- */
+.course-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+    height: 100%;
+    border: 1px solid rgba(42, 109, 244, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px -12px rgba(42, 109, 244, 0.25);
+}
+.course-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+.course-card .card-body {
+    padding: 20px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.course-card .card-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0b1a33;
+    margin-bottom: 6px;
+    min-height: 50px;
+}
+.course-card .course-price {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #0b1a33;
+    margin: 6px 0 10px;
+}
+.course-card .course-price small {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #6b7f9e;
+}
+.course-card .course-description {
+    color: #5a6f8c;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+    flex: 1;
+    min-height: 40px;
+}
+.btn-buy {
+    background: #f0f6ff;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 0;
+    font-weight: 600;
+    color: #0b1a33;
+    transition: 0.2s;
+    width: 100%;
+    margin-top: auto;
+}
+.btn-buy:hover {
+    background: #0b1a33;
+    color: white;
+}
+
+/* ---------- gallery ---------- */
+.gallery-img {
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+    transition: 0.3s;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 2px solid white;
+}
+.gallery-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- testimonials ---------- */
+.testimonial-card {
+    background: white;
+    border-radius: 30px;
+    padding: 30px 24px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    height: 100%;
+}
+.testimonial-card i {
+    color: #2a6df4;
+    font-size: 1.8rem;
+    opacity: 0.3;
+}
+.testimonial-card .stars {
+    color: #fbbf24;
+    letter-spacing: 2px;
+}
+
+/* ---------- footer ---------- */
+.footer-dark {
+    background: #0b1a33;
+    color: #cbd5e6;
+    padding: 60px 0 30px;
+}
+.footer-dark h5 {
+    color: white;
+    font-weight: 600;
+}
+.footer-dark a {
+    color: #cbd5e6;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.footer-dark a:hover {
+    color: white;
+    text-decoration: underline;
+}
+.footer-dark .social i {
+    font-size: 1.4rem;
+    margin-right: 16px;
+    color: #cbd5e6;
+    transition: 0.2s;
+}
+.footer-dark .social i:hover {
+    color: #2a6df4;
+}
+
+/* ---------- admin panel ---------- */
+.admin-wrapper {
+    background: #f6f9fe;
+    min-height: 100vh;
+}
+.admin-card {
+    background: white;
+    border-radius: 32px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+.admin-card h4 {
+    font-weight: 600;
+    color: #0b1a33;
+}
+.table th {
+    font-weight: 600;
+    color: #1f2a44;
+    border-bottom: 2px solid #eaf1ff;
+}
+.badge-order {
+    background: #eaf1ff;
+    color: #0b1a33;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 40px;
+}
+.form-control,
+.form-select {
+    border-radius: 20px;
+    border: 1px solid #e2eafc;
+    padding: 10px 16px;
+}
+.form-control:focus,
+.form-select:focus {
+    border-color: #2a6df4;
+    box-shadow: 0 0 0 4px rgba(42, 109, 244, 0.12);
+}
+.btn-add-course {
+    background: #0b1a33;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-weight: 500;
+    color: white;
+    transition: 0.2s;
+}
+.btn-add-course:hover {
+    background: #2a6df4;
+    color: white;
+}
+.btn-danger-sm {
+    border-radius: 40px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+}
+.btn-edit-sm {
+    border-radius: 40px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    margin-right: 6px;
+}
+
+/* ---------- login modal ---------- */
+.login-overlay {
+    background: rgba(11, 26, 51, 0.85);
+    backdrop-filter: blur(6px);
+}
+.login-card {
+    background: white;
+    border-radius: 40px;
+    padding: 40px 36px;
+    max-width: 420px;
+    width: 100%;
+}
+.login-card .btn-primary {
+    background: #0b1a33;
+    border: none;
+    border-radius: 60px;
+    padding: 12px;
+    font-weight: 600;
+}
+.login-card .btn-primary:hover {
+    background: #2a6df4;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2.4rem;
+    }
+    .gallery-img {
+        height: 160px;
+    }
+    .course-card .card-img-top {
+        height: 160px;
+    }
+}
