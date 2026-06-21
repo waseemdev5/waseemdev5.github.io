@@ -316,19 +316,14 @@
             loginModal.hide();
             adminDashboard.style.display = 'block';
 
-            // Hide public sections
+            // Hide only navbar (courses stay visible)
             document.querySelector('.navbar').style.display = 'none';
-            document.querySelector('.hero-overlay').style.display = 'none';
-            document.getElementById('courses').style.display = 'none';
-            document.getElementById('gallery').style.display = 'none';
-            document.getElementById('testimonials').style.display = 'none';
-            document.getElementById('footer').style.display = 'none';
 
             renderOrders();
             renderManageList();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            alert('Invalid credentials. Use admin / admin123');
+            alert('Invalid credentials. Use admin / hattar1234');
         }
     });
 
@@ -336,30 +331,14 @@
     logoutBtn.addEventListener('click', function () {
         adminDashboard.style.display = 'none';
 
-        // Show public sections
+        // Show navbar again
         document.querySelector('.navbar').style.display = '';
-        document.querySelector('.hero-overlay').style.display = '';
-        document.getElementById('courses').style.display = '';
-        document.getElementById('gallery').style.display = '';
-        document.getElementById('testimonials').style.display = '';
-        document.getElementById('footer').style.display = '';
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ---------- Dashboard Button ----------
-    adminLoginBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        // If already logged in, just scroll to dashboard
-        if (adminDashboard.style.display === 'block') {
-            adminDashboard.scrollIntoView({ behavior: 'smooth' });
-            return;
-        }
-
-        // Show login modal
-        loginModal.show();
-    });
+    // ---------- Dashboard Button (Hidden but accessible via console) ----------
+    // adminLoginBtn is removed from navbar, but we keep the event listener for secret access
 
     // ---------- INIT ----------
     renderCourses();
