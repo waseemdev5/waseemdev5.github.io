@@ -349,20 +349,43 @@
     adminDashboard.style.display = 'none';
 
 })();
-// ---------- AUTO-LOGIN WITH #admin URL ----------
-(function autoAdmin() {
-    // Check if URL has #admin
+// ------------------------------------------------------------
+// SHOW ONLY DASHBOARD WHEN URL HAS #admin
+// ------------------------------------------------------------
+(function() {
+    // Check if the URL contains "#admin"
     if (window.location.hash === '#admin') {
-        // Wait for page to load
-        setTimeout(function() {
-            // Auto-fill and submit login
-            document.getElementById('loginUser').value = 'admin';
-            document.getElementById('loginPass').value = 'hattar1234';
-            
-            // Trigger login
-            var form = document.getElementById('loginForm');
+        // --- 1. Hide all public sections ---
+        var publicSections = [
+            document.querySelector('.hero-overlay'),
+            document.getElementById('courses'),
+            document.getElementById('gallery'),
+            document.getElementById('testimonials'),
+            document.getElementById('footer')
+        ];
+        publicSections.forEach(function(section) {
+            if (section) section.style.display = 'none';
+        });
+
+        // --- 2. Ensure the Dashboard is visible ---
+        var dashboard = document.getElementById('adminDashboard');
+        if (dashboard) {
+            dashboard.style.display = 'block';
+            // Scroll to the top of the dashboard
+            dashboard.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- 3. Auto-login for a seamless experience ---
+        var loginUser = document.getElementById('loginUser');
+        var loginPass = document.getElementById('loginPass');
+        var loginForm = document.getElementById('loginForm');
+
+        if (loginUser && loginPass && loginForm) {
+            loginUser.value = 'admin';
+            loginPass.value = 'hattar1234';
+            // Trigger the login process
             var event = new Event('submit', { bubbles: true });
-            form.dispatchEvent(event);
-        }, 1000);
+            loginForm.dispatchEvent(event);
+        }
     }
 })();
