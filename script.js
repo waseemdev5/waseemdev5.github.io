@@ -343,8 +343,12 @@
     // adminLoginBtn is removed from navbar, but we keep the event listener for secret access
 
     // ---------- FORCE REFRESH PUBLIC VIEW ----------
-    function refreshPublicView() {
-        // Show public sections temporarily
+function refreshPublicView() {
+    // Force re-render courses
+    renderCourses();
+    
+    // If we're NOT in admin mode, make sure everything is visible
+    if (window.location.hash !== '#admin') {
         var hero = document.querySelector('.hero-overlay');
         var courses = document.getElementById('courses');
         var gallery = document.getElementById('gallery');
@@ -356,21 +360,9 @@
         if (gallery) gallery.style.display = '';
         if (testimonials) testimonials.style.display = '';
         if (footer) footer.style.display = '';
-        
-        // Re-render courses
-        renderCourses();
-        
-        // If we're in admin mode, hide public sections again
-        if (window.location.hash === '#admin') {
-            if (hero) hero.style.display = 'none';
-            if (courses) courses.style.display = 'none';
-            if (gallery) gallery.style.display = 'none';
-            if (testimonials) testimonials.style.display = 'none';
-            if (footer) footer.style.display = 'none';
-        }
     }
-
-    // ---------- INIT ----------
+}
+   // ---------- INIT ----------
     renderCourses();
     renderOrders();
     renderManageList();
