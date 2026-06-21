@@ -213,6 +213,7 @@
                     renderCourses();
                     renderOrders();
                     renderManageList();
+                    refreshPublicView();
                     resetForm();
                 }
             });
@@ -301,6 +302,7 @@
 
         renderCourses();
         renderOrders();
+        refreshPublicView();
         courseForm.reset();
         imageInput.value = '';
     });
@@ -340,6 +342,34 @@
     // ---------- Dashboard Button (Hidden but accessible via console) ----------
     // adminLoginBtn is removed from navbar, but we keep the event listener for secret access
 
+    // ---------- FORCE REFRESH PUBLIC VIEW ----------
+    function refreshPublicView() {
+        // Show public sections temporarily
+        var hero = document.querySelector('.hero-overlay');
+        var courses = document.getElementById('courses');
+        var gallery = document.getElementById('gallery');
+        var testimonials = document.getElementById('testimonials');
+        var footer = document.getElementById('footer');
+        
+        if (hero) hero.style.display = '';
+        if (courses) courses.style.display = '';
+        if (gallery) gallery.style.display = '';
+        if (testimonials) testimonials.style.display = '';
+        if (footer) footer.style.display = '';
+        
+        // Re-render courses
+        renderCourses();
+        
+        // If we're in admin mode, hide public sections again
+        if (window.location.hash === '#admin') {
+            if (hero) hero.style.display = 'none';
+            if (courses) courses.style.display = 'none';
+            if (gallery) gallery.style.display = 'none';
+            if (testimonials) testimonials.style.display = 'none';
+            if (footer) footer.style.display = 'none';
+        }
+    }
+
     // ---------- INIT ----------
     renderCourses();
     renderOrders();
@@ -348,44 +378,45 @@
     // Ensure dashboard is hidden on page load
     adminDashboard.style.display = 'none';
 
-})();
-// ------------------------------------------------------------
-// SHOW ONLY DASHBOARD WHEN URL HAS #admin
-// ------------------------------------------------------------
-(function() {
-    // Check if the URL contains "#admin"
-    if (window.location.hash === '#admin') {
-        // --- 1. Hide all public sections ---
-        var publicSections = [
-            document.querySelector('.hero-overlay'),
-            document.getElementById('courses'),
-            document.getElementById('gallery'),
-            document.getElementById('testimonials'),
-            document.getElementById('footer')
-        ];
-        publicSections.forEach(function(section) {
-            if (section) section.style.display = 'none';
-        });
+    // ------------------------------------------------------------
+    // SHOW ONLY DASHBOARD WHEN URL HAS #admin
+    // ------------------------------------------------------------
+    (function() {
+        // Check if the URL contains "#admin"
+        if (window.location.hash === '#admin') {
+            // --- 1. Hide all public sections ---
+            var publicSections = [
+                document.querySelector('.hero-overlay'),
+                document.getElementById('courses'),
+                document.getElementById('gallery'),
+                document.getElementById('testimonials'),
+                document.getElementById('footer')
+            ];
+            publicSections.forEach(function(section) {
+                if (section) section.style.display = 'none';
+            });
 
-        // --- 2. Ensure the Dashboard is visible ---
-        var dashboard = document.getElementById('adminDashboard');
-        if (dashboard) {
-            dashboard.style.display = 'block';
-            // Scroll to the top of the dashboard
-            dashboard.scrollIntoView({ behavior: 'smooth' });
+            // --- 2. Ensure the Dashboard is visible ---
+            var dashboard = document.getElementById('adminDashboard');
+            if (dashboard) {
+                dashboard.style.display = 'block';
+                // Scroll to the top of the dashboard
+                dashboard.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // --- 3. Auto-login for a seamless experience ---
+            var loginUser = document.getElementById('loginUser');
+            var loginPass = document.getElementById('loginPass');
+            var loginFormElement = document.getElementById('loginForm');
+
+            if (loginUser && loginPass && loginFormElement) {
+                loginUser.value = 'admin';
+                loginPass.value = 'hattar1234';
+                // Trigger the login process
+                var event = new Event('submit', { bubbles: true });
+                loginFormElement.dispatchEvent(event);
+            }
         }
+    })();
 
-        // --- 3. Auto-login for a seamless experience ---
-        var loginUser = document.getElementById('loginUser');
-        var loginPass = document.getElementById('loginPass');
-        var loginForm = document.getElementById('loginForm');
-
-        if (loginUser && loginPass && loginForm) {
-            loginUser.value = 'admin';
-            loginPass.value = 'hattar1234';
-            // Trigger the login process
-            var event = new Event('submit', { bubbles: true });
-            loginForm.dispatchEvent(event);
-        }
-    }
 })();
