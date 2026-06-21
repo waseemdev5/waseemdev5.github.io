@@ -312,7 +312,7 @@
         const user = document.getElementById('loginUser').value;
         const pass = document.getElementById('loginPass').value;
 
-        if (user === 'admin' && pass === 'admin123') {
+        if (user === 'admin' && pass === 'hattar1234') {
             loginModal.hide();
             adminDashboard.style.display = 'block';
 
