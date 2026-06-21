@@ -10,56 +10,56 @@
         {
             id: 1,
             title: 'Web Development (HTML, CSS, JS)',
-            price: 49.99,
+            price: 14.99,
             image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=240&fit=crop',
             description: 'Build modern, responsive websites from scratch with HTML5, CSS3, and JavaScript.'
         },
         {
             id: 2,
             title: 'Digital Marketing Mastery',
-            price: 39.99,
+            price: 12.99,
             image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=240&fit=crop',
             description: 'Master SEO, social media marketing, Google Ads, and analytics strategies.'
         },
         {
             id: 3,
             title: 'Professional Video Editing',
-            price: 59.99,
+            price: 14.99,
             image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=240&fit=crop',
             description: 'Learn to edit videos like a pro using Adobe Premiere Pro and DaVinci Resolve.'
         },
         {
             id: 4,
             title: 'WordPress Development',
-            price: 44.99,
+            price: 14.99,
             image: 'https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?w=400&h=240&fit=crop',
             description: 'Create stunning websites with WordPress themes, plugins, and custom development.'
         },
         {
             id: 5,
             title: 'YouTube Automation',
-            price: 69.99,
+            price: 11.99,
             image: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=400&h=240&fit=crop',
             description: 'Grow your YouTube channel with automation tools, SEO, and content strategies.'
         },
         {
             id: 6,
             title: 'Generative AI Fundamentals',
-            price: 79.99,
+            price: 11.99,
             image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=240&fit=crop',
             description: 'Learn to build AI models that generate text, images, and creative content.'
         },
         {
             id: 7,
             title: 'Agentic AI Development',
-            price: 89.99,
+            price: 11.99,
             image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=240&fit=crop',
             description: 'Build autonomous AI agents for real-world problem solving and automation.'
         },
         {
             id: 8,
             title: 'AI Automation for Business',
-            price: 99.99,
+            price: 14.99,
             image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=240&fit=crop',
             description: 'Automate business processes and workflows using AI and machine learning.'
         }
